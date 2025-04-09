@@ -7,6 +7,8 @@ import { Gif } from '../interfaces/gif.interface';
 import { GifMapper } from '../mapper/gif.mapper';
 import { map } from 'rxjs';
 
+
+
 @Injectable({providedIn: 'root'})
 export class GifService {
     
