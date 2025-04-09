@@ -3,7 +3,7 @@ export const environment = {
     companyName: 'Gif',
     companyName2: 'App',
     companySlogan: 'Lo mejor de lo mejor',
-    giphyApiKey: 'Mn8Gwg3WbtICs05md5Wids6lrZ06PIa9',
+    giphyApiKey: '3Gh49v8GYxBXUH1fTsk0ekVj5S5Vd74s',
     giphyUrl: 'https://api.giphy.com/v1'
   };
   

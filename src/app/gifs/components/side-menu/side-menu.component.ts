@@ -1,11 +1,18 @@
 import { Component, HostListener } from '@angular/core';
 import { SideMenuHeaderComponent } from "../side-menu-header/side-menu-header.component";
 import { SideMenuOptionsComponent } from "../side-menu-options/side-menu-options.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'gifs-side-menu',
+  standalone: true,
   templateUrl: './side-menu.component.html',
-  imports: [SideMenuHeaderComponent, SideMenuOptionsComponent],
+  imports: [
+    CommonModule,          // 👈 Necesario para usar *ngIf, *ngFor, etc.
+    /* otros componentes que estés usando, como: */
+    SideMenuHeaderComponent,
+    SideMenuOptionsComponent,
+  ]
 })
 export class SideMenuComponent {
   isMenuOpen = false;
