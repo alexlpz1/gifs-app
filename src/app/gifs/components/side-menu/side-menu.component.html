@@ -1,11 +1,39 @@
-<div id="menu" class="w-[220px] bg-gray-900 min-h-screen z-10 text-slate-300 w-64 fixed left-0 h-screen overflow-y-scroll">
-           
-    <!-- gifs-side-menu-header -->
+<!-- Botón ☰ visible solo en móviles -->
+<button 
+  class="md:hidden p-4 text-black
+   z-50 relative"
+  (click)="toggleMenu()"
+>
+  ☰
+</button>
 
-    <gifs-side-menu-header />
+<!-- Fondo oscuro cuando el menú está abierto (en móviles) -->
+<div 
+  *ngIf="isMenuOpen" 
+  class="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+  (click)="closeMenu()" 
+></div>
 
-    <!-- gifs-side-menu -->
-    
-    <gifs-side-menu-options />
+<!-- Menú lateral -->
+<div 
+  id="menu"
+  class="fixed top-0 left-0 h-full w-64 bg-gray-900 text-white z-50 overflow-y-auto 
+         transform transition-transform duration-300 ease-in-out 
+         -translate-x-full md:translate-x-0"
+  [class.translate-x-0]="isMenuOpen"
+  [class.-translate-x-full]="!isMenuOpen && isSmallScreen"
+>
+  <!-- Botón para cerrar el menú -->
+  <button 
+    class="absolute top-4 left-4 text-white bg-red-700 p-2 rounded-full hover:bg-gray-600"
+    (click)="closeMenu()"
+  >
+    ✕
+  </button>
 
+  <!-- Header -->
+  <gifs-side-menu-header></gifs-side-menu-header>
+
+  <!-- Opciones -->
+  <gifs-side-menu-options></gifs-side-menu-options>
 </div>
